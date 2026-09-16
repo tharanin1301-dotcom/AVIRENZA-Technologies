@@ -1,0 +1,91 @@
+WORLD HAPPINESS ANALYSIS – EDA FINDINGS REPORT
+AVIRENZA Technologies | Tharani Natarajan | WHR 2023
+=================================================================
+=================================================================
+DESCRIPTIVE STATISTICS
+=================================================================
+                                 Mean   Median     Min     Max  Std Dev
+Ladder score                   5.6080   5.5075   2.852   7.804   1.0972
+Logged GDP per capita          9.5025   9.7130   6.944  11.370   1.2199
+Social support                 0.7788   0.8090   0.368   0.983   0.1457
+Healthy life expectancy       66.3088  67.1000  51.500  76.800   6.1755
+Freedom to make life choices   0.7376   0.7525   0.412   0.955   0.1210
+Generosity                     0.0820   0.0610  -0.141   0.284   0.1059
+Perceptions of corruption      0.7329   0.7790   0.209   0.881   0.1363
+
+--- Quartiles ---
+      Ladder score  Logged GDP per capita  Social support  Healthy life expectancy  Freedom to make life choices  Generosity  Perceptions of corruption
+0.25        4.8692                 8.7215          0.7278                   63.125                        0.6638       0.014                     0.6868
+0.50        5.5075                 9.7130          0.8090                   67.100                        0.7525       0.061                     0.7790
+0.75        6.4598                10.5368          0.8878                   72.000                        0.8220       0.164                     0.8298
+
+--- Happiness Score Key Facts ---
+  Highest score : Finland (7.804)
+  Lowest score  : Mozambique (2.852)
+  Global average: 5.608
+  Std deviation : 1.097
+
+--- Average Happiness by Region ---
+Regional indicator
+North America and ANZ                 7.018
+Western Europe                        6.910
+Central and Eastern Europe            5.937
+East Asia                             5.815
+Latin America and Caribbean           5.644
+Middle East and North Africa          5.400
+Commonwealth of Independent States    5.303
+Southeast Asia                        5.065
+South Asia                            4.533
+Sub-Saharan Africa                    4.165
+=================================================================
+
+=================================================================
+CORRELATION ANALYSIS (Pearson)
+=================================================================
+
+Correlation with Happiness (Ladder) Score:
+  Freedom to make life choices        r = +0.9101  (Strong Positive)
+  Logged GDP per capita               r = +0.8975  (Strong Positive)
+  Social support                      r = +0.8812  (Strong Positive)
+  Healthy life expectancy             r = +0.8274  (Strong Positive)
+  Generosity                          r = -0.1620  (Weak Negative)
+  Perceptions of corruption           r = -0.7350  (Strong Negative)
+
+[!] IMPORTANT: Correlation indicates association, NOT causation.
+    These relationships should inform further research, not policy claims.
+=================================================================
+
+=================================================================
+KEY FINDINGS
+=================================================================
+
+1. Global Happiness Range: 2.852 (lowest) to 7.804 (highest)
+   Mean = 5.608, Median = 5.508, StdDev = 1.097
+
+2. Top 5 Happiest Countries:
+   Finland                                  7.804
+   Denmark                                  7.586
+   Iceland                                  7.530
+   Israel                                   7.473
+   Netherlands                              7.403
+
+3. Bottom 5 Least Happy Countries:
+   Mozambique                               2.852
+   Botswana                                 3.572
+   Rwanda                                   3.703
+   Zimbabwe                                 3.802
+   Ukraine                                  3.846
+
+4. Strongest positive correlate: 'Freedom to make life choices' (r = +0.910)
+   Weakest / most negative:       'Perceptions of corruption' (r = -0.735)
+
+5. Happiest region on average    : North America and ANZ (7.018)
+   Least happy region on average  : Sub-Saharan Africa (4.165)
+
+6. Limitations:
+   • Dataset reflects self-reported life satisfaction; subjective bias may exist.
+   • Cross-sectional data for one year; trends may differ over time.
+   • Correlation != causation; no causal claims are made.
+   • Some smaller nations may be absent from the dataset.
+=================================================================
+
