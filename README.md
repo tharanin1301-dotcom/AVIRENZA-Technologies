@@ -33,16 +33,18 @@ Each task is a self-contained project demonstrating practical skills in data sci
 | Task | Title | Status |
 |------|-------|--------|
 | [Task 1](./Task-1-World-Happiness-Analysis/README.md) | World Happiness Analysis Using Python | Completed |
+| [Task 2](./Task-2-Bank-Marketing-Data-Preprocessing/README.md) | Bank Marketing Data Preprocessing Using Python | Completed |
 
 ---
 
 ## Technologies Used
 
 - **Python 3.x**
-- **Pandas, NumPy** – Data manipulation
-- **Matplotlib, Seaborn** – Visualization
-- **Jupyter Notebook** – Interactive analysis
-- **Git** – Version control
+- **Pandas, NumPy** - Data manipulation & numerical computation
+- **Scikit-Learn** - Machine learning preprocessing & pipelines
+- **Matplotlib, Seaborn** - Data visualization & aesthetic charting
+- **Jupyter Notebook** - Interactive analysis & experiments
+- **Git** - Version control
 
 ---
 
@@ -65,10 +67,16 @@ Navigate into any task folder and follow its individual README for specific inst
 
 ```
 AVIRENZA-Technologies/
-├── README.md                              <- This file
+├── README.md                              <- Main repository index
 ├── requirements.txt                       <- Python dependencies
-├── .gitignore
-└── Task-1-World-Happiness-Analysis/
+├── .gitignore                             <- Git ignore rules
+├── Task-1-World-Happiness-Analysis/       <- Task 1: Exploratory Data Analysis
+│   ├── README.md
+│   ├── data/
+│   ├── notebooks/
+│   ├── src/
+│   └── outputs/
+└── Task-2-Bank-Marketing-Data-Preprocessing/ <- Task 2: Data Preprocessing Pipeline
     ├── README.md
     ├── data/
     ├── notebooks/

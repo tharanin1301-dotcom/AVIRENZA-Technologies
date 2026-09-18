@@ -1,0 +1,126 @@
+================================================================================
+AVIRENZA TECHNOLOGIES - AI/ML INTERNSHIP
+TASK 2: BANK MARKETING DATA PREPROCESSING PIPELINE REPORT
+================================================================================
+
+Student Name       : Tharani Natarajan
+College            : IFET College of Engineering
+Department         : Artificial Intelligence and Data Science
+Project Title      : Bank Marketing Data Preprocessing Using Python
+Dataset            : UCI Machine Learning Repository (Bank Marketing Dataset)
+Primary Source     : https://archive.ics.uci.edu/dataset/222/bank+marketing
+
+--------------------------------------------------------------------------------
+1. DATASET CHARACTERISTICS & RAW DIMENSIONS
+--------------------------------------------------------------------------------
+Total Instances    : 45,211
+Total Features     : 17 (16 predictive features + 1 target 'y')
+Target Variable    : y (Term Deposit Subscription)
+Delimiter Used     : Semicolon (';')
+
+Class Distribution (Raw Target):
+  - Class 'no'     : 39,922 (88.30%)
+  - Class 'yes'    : 5,289 (11.70%)
+  - Imbalance Ratio: ~7.55 to 1 (Stratified split strictly required)
+
+--------------------------------------------------------------------------------
+2. FEATURE IDENTIFICATION & TAXONOMY
+--------------------------------------------------------------------------------
+Numerical Features (7):
+  - age          (min:      18, max:      95, mean:     40.94)
+  - balance      (min:   -8019, max:  102127, mean:   1362.27)
+  - day          (min:       1, max:      31, mean:     15.81)
+  - duration     (min:       0, max:    4918, mean:    258.16)
+  - campaign     (min:       1, max:      63, mean:      2.76)
+  - pdays        (min:      -1, max:     871, mean:     40.20)
+  - previous     (min:       0, max:     275, mean:      0.58)
+
+Categorical Features (9):
+  - job          (12 categories: management, technician, entrepreneur, blue-collar ...)
+  - marital      (3 categories: married, single, divorced ...)
+  - education    (4 categories: tertiary, secondary, unknown, primary ...)
+  - default      (2 categories: no, yes ...)
+  - housing      (2 categories: yes, no ...)
+  - loan         (2 categories: no, yes ...)
+  - contact      (3 categories: unknown, cellular, telephone ...)
+  - month        (12 categories: may, jun, jul, aug ...)
+  - poutcome     (4 categories: unknown, failure, other, success ...)
+
+--------------------------------------------------------------------------------
+3. DATA QUALITY & MISSING/UNKNOWN VALUES
+--------------------------------------------------------------------------------
+Standard Nulls (NaN) : 0 across all 17 columns
+Duplicate Rows       : 0 exact duplicate rows
+
+Domain 'unknown' Analysis:
+  - job         :    288 records (0.64%)
+  - education   :   1857 records (4.11%)
+  - contact     :  13020 records (28.80%)
+  - poutcome    :  36959 records (81.75%)
+
+Domain Treatment Decision:
+'unknown' values in 'poutcome' and 'contact' represent valid operational states
+(e.g., customers not previously contacted). They are retained and encoded into
+distinct indicator dimensions via OneHotEncoder to preserve predictive signal.
+
+--------------------------------------------------------------------------------
+4. DATA LEAKAGE PREVENTION & SPLIT STRATEGY
+--------------------------------------------------------------------------------
+Split Methodology  : train_test_split (Stratified by target y)
+Split Ratio        : 80% Train (36,168 rows) / 20% Test (9,043 rows)
+Random State       : 42 (reproducible)
+
+Strict Isolation Protocol:
+  - Transformation fit occurred EXCLUSIVELY on X_train.
+  - Imputer statistics (median, mode) calculated only on X_train.
+  - Standard scaling parameters (mean, std) calculated only on X_train.
+  - One-hot encoder categories learned only from X_train.
+  - X_test was transformed using fitted parameters without re-estimation.
+
+--------------------------------------------------------------------------------
+5. PREPROCESSING PIPELINE SPECIFICATION
+--------------------------------------------------------------------------------
+Numerical Pipeline   : SimpleImputer(strategy='median') -> StandardScaler()
+Categorical Pipeline : SimpleImputer(strategy='most_frequent') -> OneHotEncoder(handle_unknown='ignore', sparse_output=False)
+Composite Transformer: ColumnTransformer (combines numerical and categorical pipelines)
+
+Input Dimensions     : X_train (36168, 16) | X_test (9043, 16)
+Output Dimensions    : X_train (36168, 51) | X_test (9043, 51)
+Total Output Features: 51 transformed columns
+
+Sample Encoded Features:
+  [00] num__age
+  [01] num__balance
+  [02] num__day
+  [03] num__duration
+  [04] num__campaign
+  [05] num__pdays
+  [06] num__previous
+  [07] cat__job_admin.
+  [08] cat__job_blue-collar
+  [09] cat__job_entrepreneur
+  [10] cat__job_housemaid
+  [11] cat__job_management
+  [12] cat__job_retired
+  [13] cat__job_self-employed
+  [14] cat__job_services
+  ... [50] cat__poutcome_unknown
+
+--------------------------------------------------------------------------------
+6. VALIDATION & ML READINESS VERIFICATION
+--------------------------------------------------------------------------------
+Nulls in Processed Train : 0
+Nulls in Processed Test  : 0
+Standard Scaler Check    : Mean ~ 0.0, Std ~ 1.0 verified across numerical features
+Baseline Logistic Model  :
+  - Training Accuracy    : 90.20%
+  - Testing Accuracy     : 90.12%
+
+--------------------------------------------------------------------------------
+7. CONCLUSION & SUBMISSION READINESS
+--------------------------------------------------------------------------------
+The preprocessing pipeline is robust, modular, reproducible, and ready for
+downstream machine learning model training without any risk of data leakage.
+
+Status: COMPLETED & FULLY VALIDATED
+================================================================================
