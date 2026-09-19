@@ -1,0 +1,52 @@
+======================================================================
+AVIRENZA TECHNOLOGIES AI/ML INTERNSHIP - TASK 3 REPORT
+Project: Forest Fire Risk Prediction Using Machine Learning
+Student: Tharani Natarajan | IFET College of Engineering
+Department: Artificial Intelligence and Data Science
+======================================================================
+
+1. DATASET & PROBLEM FORMULATION
+----------------------------------------
+Dataset: Official UCI Forest Fires Dataset (Montesinho Natural Park, Portugal)
+Class 0 (No Burned Area, area == 0): 244 (47.56%)
+Class 1 (Burned Area Recorded, area > 0): 269 (52.44%)
+Leakage Prevention: 'area' variable excluded strictly from feature matrix.
+
+2. MODEL PERFORMANCE COMPARISON (TEST SET: 20% Stratified Split)
+----------------------------------------------------------------------
+              Model  Accuracy  Precision  Recall  F1-score  ROC-AUC  CV_F1_Mean  CV_F1_Std  CV_ROC_AUC_Mean
+Logistic Regression    0.5437     0.5556  0.6481    0.5983   0.6096      0.5566     0.0412           0.4739
+      Random Forest    0.6408     0.6491  0.6852    0.6667   0.7037      0.5522     0.0354           0.5398
+
+3. DETAILED CLASSIFICATION REPORT: LOGISTIC REGRESSION
+--------------------------------------------------
+Class 0 -> Precision: 0.5250, Recall: 0.4286, F1-score: 0.4719, Support: 49.0
+Class 1 -> Precision: 0.5556, Recall: 0.6481, F1-score: 0.5983, Support: 54.0
+Macro Avg -> Precision: 0.5403, Recall: 0.5384, F1-score: 0.5351
+Weighted Avg -> Precision: 0.5410, Recall: 0.5437, F1-score: 0.5382
+Confusion Matrix (TN, FP, FN, TP):
+[[21 28]
+ [19 35]]
+
+3. DETAILED CLASSIFICATION REPORT: RANDOM FOREST
+--------------------------------------------------
+Class 0 -> Precision: 0.6304, Recall: 0.5918, F1-score: 0.6105, Support: 49.0
+Class 1 -> Precision: 0.6491, Recall: 0.6852, F1-score: 0.6667, Support: 54.0
+Macro Avg -> Precision: 0.6398, Recall: 0.6385, F1-score: 0.6386
+Weighted Avg -> Precision: 0.6402, Recall: 0.6408, F1-score: 0.6400
+Confusion Matrix (TN, FP, FN, TP):
+[[29 20]
+ [17 37]]
+
+4. 5-FOLD STRATIFIED CROSS-VALIDATION ON TRAINING SET
+--------------------------------------------------
+Logistic Regression:
+  - F1-Score: 0.5566 (+/- 0.0412)
+  - ROC-AUC : 0.4739 (+/- 0.0564)
+  - Accuracy: 0.4976 (+/- 0.0365)
+
+Random Forest:
+  - F1-Score: 0.5522 (+/- 0.0354)
+  - ROC-AUC : 0.5398 (+/- 0.0314)
+  - Accuracy: 0.5195 (+/- 0.0274)
+

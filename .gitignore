@@ -1,4 +1,4 @@
-﻿# Virtual Environments
+# Virtual Environments
 venv/
 .venv/
 env/
@@ -36,17 +36,8 @@ Thumbs.db
 *.bak
 *.orig
 
-# OS files
-.DS_Store
-Desktop.ini
-
 # Secrets and credentials
 *.env
 .env
 secrets.json
 credentials.json
-
-# Temp script files
-gen_whr.py
-make_dataset.py
-create_dataset.py
