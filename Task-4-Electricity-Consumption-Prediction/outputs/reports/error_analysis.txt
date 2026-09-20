@@ -1,0 +1,46 @@
+======================================================================
+TASK 4 ERROR ANALYSIS REPORT: ELECTRICITY CONSUMPTION PREDICTION
+Student: Tharani Natarajan | IFET College of Engineering
+Internship: AVIRENZA Technologies
+======================================================================
+
+Overall Test MAE: 0.3063 kW
+Overall Test RMSE: 0.4433 kW
+
+1. ERROR BY HOUR OF DAY (Mean Absolute Error):
+  Hour 00:00 -> MAE: 0.2082 kW
+  Hour 01:00 -> MAE: 0.1856 kW
+  Hour 02:00 -> MAE: 0.1732 kW
+  Hour 03:00 -> MAE: 0.1294 kW
+  Hour 04:00 -> MAE: 0.1274 kW
+  Hour 05:00 -> MAE: 0.1454 kW
+  Hour 06:00 -> MAE: 0.2468 kW
+  Hour 07:00 -> MAE: 0.3690 kW
+  Hour 08:00 -> MAE: 0.3114 kW
+  Hour 09:00 -> MAE: 0.3152 kW
+  Hour 10:00 -> MAE: 0.3151 kW
+  Hour 11:00 -> MAE: 0.3241 kW
+  Hour 12:00 -> MAE: 0.3567 kW
+  Hour 13:00 -> MAE: 0.3378 kW
+  Hour 14:00 -> MAE: 0.3810 kW
+  Hour 15:00 -> MAE: 0.3291 kW
+  Hour 16:00 -> MAE: 0.3188 kW
+  Hour 17:00 -> MAE: 0.3325 kW
+  Hour 18:00 -> MAE: 0.4006 kW
+  Hour 19:00 -> MAE: 0.4243 kW
+  Hour 20:00 -> MAE: 0.4447 kW
+  Hour 21:00 -> MAE: 0.4615 kW
+  Hour 22:00 -> MAE: 0.3843 kW
+  Hour 23:00 -> MAE: 0.3296 kW
+
+2. PEAK VS. OFF-PEAK HOURS ERROR:
+  Off-Peak Hours MAE: 0.2756 kW
+  Peak Hours (18-22h) MAE: 0.4231 kW
+
+3. WEEKDAY VS. WEEKEND ERROR:
+  Weekdays (Mon-Fri) MAE: 0.2925 kW
+  Weekends (Sat-Sun) MAE: 0.3409 kW
+
+4. KEY ERROR INSIGHTS:
+  - Higher absolute errors occur during evening peak consumption periods (18:00–22:00) due to sharp discretionary household appliance spikes.
+  - Lower errors occur during overnight baseline hours (01:00–06:00) when consumption is stable and predictable.

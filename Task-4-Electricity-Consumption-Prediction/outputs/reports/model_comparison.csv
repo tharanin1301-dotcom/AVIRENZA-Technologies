@@ -1,0 +1,4 @@
+Model,Features_Count,MAE (kW),RMSE (kW),R2_Score,CV_MAE_Mean,CV_RMSE_Mean,CV_R2_Mean
+Baseline Linear Regression,5,0.5179,0.6382,0.2299,0.6244,0.8015,0.2084
+Improved Random Forest (FE),26,0.3064,0.4443,0.6267,0.3515,0.5037,0.6857
+Tuned Random Forest,26,0.3063,0.4433,0.6284,0.3512,0.502,0.6879
